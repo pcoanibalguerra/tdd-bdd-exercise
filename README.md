@@ -28,3 +28,18 @@ Output should be something like
 1 scenario (1 passed)
 3 steps (3 passed)
 0m13.461s (executing steps: 0m06.119s)
+
+
+----
+### angular-front
+Web app to wire end to end
+
+## run
+ng serve
+
+## end 2 end testinf
+ng e2e 
+Excecute  tests with playwright
+
+npm test
+Excecute tests with karma and jassmine
