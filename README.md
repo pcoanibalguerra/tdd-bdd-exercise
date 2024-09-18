@@ -19,6 +19,9 @@ A scaffolding created to "play" with cucumber and Playwright
 1. npm install
 2. npm test
 
+If you want to generate report
+npm run report
+
 Output should be something like
 > cucumber-playwright-jc@1.0.0 test
 > cucumber-js
