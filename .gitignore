@@ -2,3 +2,4 @@ node_modules
 *lock*
 results.json
 coverage
+playwright-cucumber/cucumber_report.html
