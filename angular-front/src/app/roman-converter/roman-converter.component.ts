@@ -12,11 +12,15 @@ import { FormsModule } from '@angular/forms';
 })export class RomanConverterComponent {
   arabicNumber: number = 0;
   romanResult: string | undefined;
+  url: string = "http://localhost:3000"
 
   
 
-  convertToRoman() {
-    this.romanResult = "I";
+  async convertToRoman() {
+    
+    const response = await fetch(`${this.url}/convert?number=${this.arabicNumber}`);
+    const data = await response.json();
+    this.romanResult = data.result;
     
   }
 }
