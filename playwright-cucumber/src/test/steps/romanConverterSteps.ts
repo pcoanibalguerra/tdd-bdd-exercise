@@ -43,11 +43,7 @@ When('the user input {string}', async (intNumber: string) => {
 
 Then('the result should be {string}', async (result: string) => {
     const titleElement = page.locator('#result');
-    const titleText = await titleElement.textContent();
-    expect(titleText).toBe(result);
-    
-
-  
+    await expect(titleElement).toHaveText(result);
 })
 
 
