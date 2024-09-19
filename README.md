@@ -32,6 +32,12 @@ Output should be something like
 3 steps (3 passed)
 0m13.461s (executing steps: 0m06.119s)
 
+To run some of the features
+
+1. Tag the features @yourTag
+2. Execute npx cucumber-js --tags "yourtag" 
+
+
 
 ----
 ### angular-front
