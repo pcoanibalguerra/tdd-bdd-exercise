@@ -1,6 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { chromium, Browser, Page } from 'playwright';
 import { expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
 let browser: Browser;
 let page: Page;
@@ -34,6 +35,22 @@ Then('the foother must have copyright {string}', async (copyRight: string) => {
     const titleText = await titleElement.textContent();
     expect(titleText).toBe(copyRight);
 })
+
+When('the user input {string}', async (intNumber: string) => {
+    await page.fill('input[name="intNumber"]', intNumber);
+    await page.click('input[name="btnConvert"]');
+  })
+
+Then('the result should be {string}', async (result: string) => {
+    const titleElement = page.locator('#result');
+    const titleText = await titleElement.textContent();
+    expect(titleText).toBe(result);
+    
+
+  
+})
+
+
 
 
 
