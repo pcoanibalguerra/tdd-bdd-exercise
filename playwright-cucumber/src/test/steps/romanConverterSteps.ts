@@ -29,6 +29,12 @@ Then('Header title must be {string}', async (headerTitle: string) => {
     expect(titleText).toBe(headerTitle);
 })
 
+Then('the foother must have copyright {string}', async (copyRight: string) => {
+    const titleElement = page.locator('#copyRight');
+    const titleText = await titleElement.textContent();
+    expect(titleText).toBe(copyRight);
+})
+
 
 
 
