@@ -38,7 +38,7 @@ Output should be something like
 To run some of the features
 
 1. Tag the features @yourTag
-2. Execute npx cucumber-js --tags "yourtag" 
+2. Execute npx cucumber-js --tags "@yourtag" 
 
 
 
