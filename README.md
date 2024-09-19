@@ -10,6 +10,9 @@ npm install
 npm test
 npm run coverage
 
+To run the server
+npm run server
+
 
 -------
 ### playright-cucumber
