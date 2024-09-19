@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     
     const response = await fetch(`${this.url}/convert?number=${this.arabicNumber}`);
     const data = await response.json();
-    this.romanResult = data.result;
+    this.romanResult = data.roman;
     
   }
 }
