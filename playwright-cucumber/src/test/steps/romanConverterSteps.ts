@@ -8,7 +8,7 @@ let page: Page;
 
 Given('the user is on the roman converter', async () => {
     browser = await chromium.launch({
-        headless: true,  // Run in non-headless mode to see what's happening
+        headless: false,  // Run in non-headless mode to see what's happening
         timeout: 30000
       });
       page = await browser.newPage();
