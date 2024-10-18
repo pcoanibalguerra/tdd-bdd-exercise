@@ -12,7 +12,7 @@ Given('the user is on the roman converter', async () => {
         timeout: 30000
       });
       page = await browser.newPage();
-      await page.goto('http://localhost:4200/');
+      await page.goto('http://localhost:4200/romans');
       
   })
 
