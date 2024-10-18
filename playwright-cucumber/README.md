@@ -1,6 +1,11 @@
 A scaffolding created to "play" with cucumber and Playwright
-project node-vitest must be running
-npm run server on node-vitest
+
+# dependencies
+## project node-vitest
+npm run server 
+
+## project angular-fron
+ng serveo
 
 1. npm install
 2. npm test
