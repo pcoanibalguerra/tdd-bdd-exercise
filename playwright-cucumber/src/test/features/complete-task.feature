@@ -1,3 +1,4 @@
+@todo-app
 Feature: Marcar la tarea como completada
   Como gestor de proyectos
   Quiero marcar las tareas como completadas

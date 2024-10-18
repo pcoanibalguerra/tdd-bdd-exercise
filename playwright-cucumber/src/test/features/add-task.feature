@@ -4,8 +4,8 @@ Feature: Agregar una nueva tarea
   quiero agregar una tarea a mi lista de pendientes
   para poder hacerle seguimiento
 
-  Scenario: Add a task with a title
-    Given the user is on the Todo app page
-    When the user enters "Buy groceries" as the task title
-    And clicks the add task button
-    Then the task should appear in the task list
+  Scenario: El usuario agrega una tarea
+    Given el usuario está en la página de pendientes
+    When ingresa "Buy groceries" como el título de una tarea
+    And da click en el botón agregar tarea
+    Then la tarea debe aparecer en la lista

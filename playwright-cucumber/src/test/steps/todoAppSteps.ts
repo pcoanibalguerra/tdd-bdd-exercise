@@ -39,7 +39,7 @@ Then('El título debe ser  {string}', async (title: string) => {
 });
 
 
-Given('the user is on the Todo app page', async () => {
+Given('el usuario está en la página de pendientes', async () => {
   browser = await chromium.launch({
     headless: false,  // Run in non-headless mode to see what's happening
     timeout: 30000
@@ -48,15 +48,15 @@ Given('the user is on the Todo app page', async () => {
   await page.goto('http://localhost:4200/todo-app');
 });
 
-When('the user enters {string} as the task title', async (taskTitle: string) => {
+When('ingresa {string} como el título de una tarea', async (taskTitle: string) => {
   await page.fill('input[placeholder="Task Title (required)"]', taskTitle);
 });
 
-When('clicks the add task button', async () => {
+When('da click en el botón agregar tarea', async () => {
   await page.click('button:has-text("Add Task")');
 });
 
-Then('the task should appear in the task list', async () => {
+Then('la tarea debe aparecer en la lista', async () => {
   const taskText = await page.textContent('.task-list li strong');
   expect(taskText).toBe('Buy groceries');
 });
@@ -75,6 +75,17 @@ Then('la tarea debe estar {string}', async (state: string) => {
   const stateText = await page.textContent('.task-list li .task-state');
   expect(stateText).toBe(state);
 });
+
+Then('debe mostrar un mensaje de error que diga {string}', async (errorMessage: string) => {
+  const errorText = await page.textContent('.error-message');
+  expect(errorText).toBe(errorMessage);
+})
+
+When('el usuario de click en el botón de agregar tarea sin ingresar un título', async () => {
+  await page.click('button:has-text("Add Task")');
+})
+
+
 
 
 
