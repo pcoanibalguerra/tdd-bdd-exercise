@@ -19,7 +19,7 @@ export class HomeComponent {
   navigateToTodoApp(): void {
     if (this.userName.trim()) {
       this.showError = false;
-      this.router.navigate(['/todo-app']);
+      this.router.navigate(['/todo-app'], { queryParams: { name: this.userName }});
     } else {
       this.showError = true;
     }
