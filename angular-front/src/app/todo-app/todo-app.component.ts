@@ -67,4 +67,8 @@ export class TodoAppComponent implements OnInit {
     return this.tasks.filter(task => !task.completed).length;
   }
 
+  deleteTask(index: number) {
+    this.tasks.splice(index, 1);
+  }
+
 }
