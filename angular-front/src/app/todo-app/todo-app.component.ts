@@ -63,4 +63,8 @@ export class TodoAppComponent implements OnInit {
     this.newTaskDescription = '';
   }
 
+  getPendingTasksCount(): number {
+    return this.tasks.filter(task => !task.completed).length;
+  }
+
 }
