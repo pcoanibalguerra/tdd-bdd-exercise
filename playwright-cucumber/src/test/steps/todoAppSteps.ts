@@ -20,23 +20,24 @@ Then('El usuario debe ver {string}', async (message: string) => {
   expect(welcomeText).toBe(message);
 });
 
-When('the user enters {string} in the name input', async (name: string) => {
+When('El usuario ingresa {string} en el campo de nombre', async (name: string) => {
   await page.waitForSelector('input[name="userName"]', { state: 'visible' });
   await page.fill('input[name="userName"]', name);
 });
 
-When('clicks the submit button', async () => {
+When('presiona el botón enviar', async () => {
   await page.click('button[name="submitButon"]');
 });
 
-Then('the user should be on the Todo app page', async () => {
+Then('el usuario debe estar en la página de To Do', async () => {
   expect(page.url()).toContain('/todo-app');
 });
 
-Then('the title should be {string}', async (title: string) => {
+Then('El título debe ser  {string}', async (title: string) => {
   const titleText = await page.textContent('h1');
   expect(titleText).toBe(title);
 });
+
 
 Given('the user is on the Todo app page', async () => {
   browser = await chromium.launch({
@@ -74,7 +75,3 @@ Then('the task state should be {string}', async (state: string) => {
   const stateText = await page.textContent('.task-list li .task-state');
   expect(stateText).toBe(state);
 });
-
-
-
-
