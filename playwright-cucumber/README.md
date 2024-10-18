@@ -26,4 +26,4 @@ npm run report
 ## to run only taged features
 tag the feature (Example in code)
 run 
-npx cucumber-js --tags <tag>
+npx cucumber-js --tags <tag> 
