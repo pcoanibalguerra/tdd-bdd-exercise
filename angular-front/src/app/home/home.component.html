@@ -3,5 +3,6 @@
     <h2>Please enter your name</h2>
     <input type="text" placeholder="Enter your name" [(ngModel)]="userName" id="userName"/> 
     <button (click)="navigateToTodoApp()">Submit</button>
+    <p *ngIf="showError" class="error-message">Name is required. Please enter your name.</p>
   </div>
   

@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-roman-converter',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './roman-converter.component.html',
   styleUrl: './roman-converter.component.css'
 })export class RomanConverterComponent {

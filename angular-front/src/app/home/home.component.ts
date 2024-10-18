@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -5,20 +6,22 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
   userName: string = '';
+  showError: boolean = false;
 
   constructor(private router: Router) {}
 
   navigateToTodoApp(): void {
     if (this.userName.trim()) {
+      this.showError = false;
       this.router.navigate(['/todo-app']);
     } else {
-      alert('Please enter your name.');
+      this.showError = true;
     }
   }
 }
