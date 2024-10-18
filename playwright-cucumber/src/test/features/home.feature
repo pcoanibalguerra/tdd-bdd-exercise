@@ -1,3 +1,4 @@
+@todo-app
 Feature: User visits the home page
   As a user
   I want to see a welcome message

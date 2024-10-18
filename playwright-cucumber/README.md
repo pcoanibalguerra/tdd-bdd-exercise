@@ -20,8 +20,10 @@ Output should be something like
 3 steps (3 passed)
 0m13.461s (executing steps: 0m06.119s)
 
-...
-to run only taged features
+## to generate rport
+npm run report
+
+## to run only taged features
 tag the feature (Example in code)
 run 
 npx cucumber-js --tags <tag>
