@@ -6,7 +6,7 @@ import { test } from '@playwright/test';
 let browser: Browser;
 let page: Page;
 
-Given('the user is on the home page', async () => {
+Given('el usuario está en la página de inicio', async () => {
     browser = await chromium.launch({
         headless: false,  // Run in non-headless mode to see what's happening
         timeout: 30000
@@ -15,7 +15,7 @@ Given('the user is on the home page', async () => {
       await page.goto('http://localhost:4200/');
 });
 
-Then('the user should see {string}', async (message: string) => {
+Then('El usuario debe ver {string}', async (message: string) => {
   const welcomeText = await page.textContent('h1');
   expect(welcomeText).toBe(message);
 });
@@ -38,7 +38,7 @@ Then('the title should be {string}', async (title: string) => {
   expect(titleText).toBe(title);
 });
 
-  Given('the user is on the Todo app page', async () => {
+Given('the user is on the Todo app page', async () => {
   browser = await chromium.launch({
     headless: false,  // Run in non-headless mode to see what's happening
     timeout: 30000
@@ -59,4 +59,22 @@ Then('the task should appear in the task list', async () => {
   const taskText = await page.textContent('.task-list li strong');
   expect(taskText).toBe('Buy groceries');
 });
+
+
+Given('a task {string} is in the task list', async (taskTitle: string) => {
+  await page.fill('input[placeholder="Task Title (required)"]', taskTitle);
+  await page.click('button:has-text("Add Task")');
+});
+
+When('the user marks the task as completed', async () => {
+  await page.click('.task-list li input[type="checkbox"]');
+});
+
+Then('the task state should be {string}', async (state: string) => {
+  const stateText = await page.textContent('.task-list li .task-state');
+  expect(stateText).toBe(state);
+});
+
+
+
 

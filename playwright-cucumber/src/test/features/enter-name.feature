@@ -1,12 +1,12 @@
 @todo-app
-Feature: Entering a name on the home page
-  As a user
-  I want to enter my name
-  So that it is used in the Todo list title
+Feature: Ingrear nombre en la aplicación
+  Como gerente de proyectos
+  Quiero ingrear mi nombre
+  Para que la aplicación me de la bienvenida y me sienta mejor
 
-  Scenario: User enters a name and navigates to the Todo list
-    Given the user is on the home page
-    When the user enters "Alice" in the name input
-    And clicks the submit button
-    Then the user should be on the Todo app page
-    And the title should be "Alice's Todo List"
+  Scenario: El usuario ingresa a la aplciación y navega la opción de To Do
+    Given el usuario está en la página de inicio
+    When El usuario ingresa "Alice" en el campo de nombre
+    And presiona el botón enviar
+    Then el usuario debe estar en la página de To Do
+    And El título debe ser  "Alice's Todo List"

@@ -1,9 +1,9 @@
 @todo-app
-Feature: User visits the home page
-  As a user
-  I want to see a welcome message
-  So that I know I'm on the correct page
+Feature: El usuario ingresa a la aplicación
+  Cómo gerente de proyecto, cuando ingrese a la aplicación 
+  Quiero ver el mensaje de bienvenida
+  Para saber que estoy en la página correcta
 
-  Scenario: Display welcome message on the home page
-    Given the user is on the home page
-    Then the user should see "Welcome to the Todo App"
+  Scenario: Mensaje de bienvenida en la página de inicio
+    Given el usuario está en la página de inicio
+    Then El usuario debe ver "Bienvenido a la aplicación ToDo"
