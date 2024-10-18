@@ -37,3 +37,26 @@ Then('the title should be {string}', async (title: string) => {
   const titleText = await page.textContent('h1');
   expect(titleText).toBe(title);
 });
+
+  Given('the user is on the Todo app page', async () => {
+  browser = await chromium.launch({
+    headless: false,  // Run in non-headless mode to see what's happening
+    timeout: 30000
+  });
+  page = await browser.newPage();
+  await page.goto('http://localhost:4200/todo-app');
+});
+
+When('the user enters {string} as the task title', async (taskTitle: string) => {
+  await page.fill('input[placeholder="Task Title (required)"]', taskTitle);
+});
+
+When('clicks the add task button', async () => {
+  await page.click('button:has-text("Add Task")');
+});
+
+Then('the task should appear in the task list', async () => {
+  const taskText = await page.textContent('.task-list li strong');
+  expect(taskText).toBe('Buy groceries');
+});
+
