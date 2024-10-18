@@ -1,8 +1,8 @@
 @todo-app
-Feature: Add a new task
-  As a user
-  I want to add tasks to my Todo list
-  So that I can keep track of my tasks
+Feature: Agregar una nueva tarea
+  Como gerente de proyectos
+  quiero agregar una tarea a mi lista de pendientes
+  para poder hacerle seguimiento
 
   Scenario: Add a task with a title
     Given the user is on the Todo app page

@@ -1,9 +1,9 @@
-Feature: Mark a task as completed
-  As a user
-  I want to mark tasks as completed
-  So that I know which tasks are done
+Feature: Marcar la tarea como completada
+  Como gestor de proyectos
+  Quiero marcar las tareas como completadas
+  Para poder saber que tareas están listas y cuales tengo pendientes
 
-  Scenario: Mark a task as completed
-    Given a task "Buy groceries" is in the task list
-    When the user marks the task as completed
-    Then the task state should be "COMPLETED"
+  Scenario: Marcar la tarea como completada
+    Given la tarea "Buy groceries" está en la lista de pendientes
+    When el usuario la marca como completada
+    Then la tarea debe estar "COMPLETED"

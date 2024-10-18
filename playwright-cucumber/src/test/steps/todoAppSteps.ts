@@ -62,16 +62,19 @@ Then('the task should appear in the task list', async () => {
 });
 
 
-Given('a task {string} is in the task list', async (taskTitle: string) => {
+Given('la tarea {string} está en la lista de pendientes', async (taskTitle: string) => {
   await page.fill('input[placeholder="Task Title (required)"]', taskTitle);
   await page.click('button:has-text("Add Task")');
 });
 
-When('the user marks the task as completed', async () => {
+When('el usuario la marca como completada', async () => {
   await page.click('.task-list li input[type="checkbox"]');
 });
 
-Then('the task state should be {string}', async (state: string) => {
+Then('la tarea debe estar {string}', async (state: string) => {
   const stateText = await page.textContent('.task-list li .task-state');
   expect(stateText).toBe(state);
 });
+
+
+
