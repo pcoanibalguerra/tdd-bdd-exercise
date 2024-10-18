@@ -86,6 +86,19 @@ When('el usuario de click en el botón de agregar tarea sin ingresar un título'
 })
 
 
+Given('el usuario tiene {int} tareas pendientes', async (taskCount: number) => {
+  for (let i = 1; i <= taskCount; i++) {
+    await page.fill('input[name="taskTitle"]', `Task ${i}`);
+    await page.click('button[name="addTaskButton"]');
+  }
+});
+
+Then('El contador de tareas pendientes debe ser {string}', async (count: string) => {
+  const pendingCountText = await page.textContent('.pending-tasks-count');
+  expect(pendingCountText).toBe(count);
+});
+
+
 
 
 
