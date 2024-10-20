@@ -8,6 +8,7 @@ export default defineConfig({
       reporter: ['text', 'json', 'html'],
       include: ['src/**/*'],
       exclude: ['tests/**/*']
+      //exclude: ['tests/**/*', 'src/Server.ts']
     },
   },
 })
