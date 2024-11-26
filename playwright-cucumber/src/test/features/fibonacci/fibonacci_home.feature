@@ -5,5 +5,5 @@ Feature: El usuario ingresa a la aplicación
   Para saber que estoy en la página correcta
 
   Scenario: Mensaje de bienvenida en la página de inicio
-    Given el usuario está en la página de romanos
+    Given el usuario está en la página de fibonacci
     Then El usuario debe ver "Bienvenido a la aplicación fibonacci"
