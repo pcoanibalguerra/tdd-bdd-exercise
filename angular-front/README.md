@@ -15,9 +15,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Cucumber tests
-1. Create feature in e2e/features
-2. Create feature step in e2e/steps
-3. Run tests   `npm run test`
+Use project playright-cucumber
 
 
 ## Running unit tests
