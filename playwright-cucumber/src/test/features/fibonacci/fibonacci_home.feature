@@ -1,4 +1,4 @@
-@fbonacci
+@fibonacci
 Feature: El usuario ingresa a la aplicación
   Cómo matemático, cuando ingrese a la aplicación fbonacci
   Quiero ver el mensaje de bienvenida
