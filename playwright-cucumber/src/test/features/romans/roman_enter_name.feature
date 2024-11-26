@@ -1,4 +1,4 @@
-@todo-app
+@romans
 Feature: Ingrear nombre en la aplicación romanos
   Como historiador 
   Quiero ingrear mi nombre
