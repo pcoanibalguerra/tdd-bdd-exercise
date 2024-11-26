@@ -2,10 +2,13 @@ A scaffolding created to "play" with cucumber and Playwright
 
 # dependencies
 ## project node-vitest
+run the backend
 npm run server 
 
-## project angular-fron
-ng serveo
+## project angular-front
+
+run the front end
+ng serve
 
 1. npm install
 2. npm test
