@@ -1,0 +1,19 @@
+<div class="container">
+    <header>
+      <h1 id="headerTitle">Welcome to Roman Converter</h1>
+    </header>
+  
+    <main>
+        <div class="converter">
+          <label for="arabicNumber">Enter an integer:</label>
+          <input type="number" name="intNumber" [(ngModel)]="arabicNumber" id="arabicNumber" (keyup.enter)="convertToRoman()">
+          <input type="button" (click)="convertToRoman()" name="btnConvert" value="Convert">
+          <p id="result">The result of converting {{ arabicNumber }} to roman is {{ romanResult }}.</p>
+        </div>
+      </main>
+  
+    <footer>
+      <p id="copyRight">Roman Number Converter © 2024</p>
+    </footer>
+  </div>
+  

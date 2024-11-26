@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --format json:results.json",
-    "report": "ts-node src/generateReport.ts"
+    "test": "nyc cucumber-js --require-module ts-node/register --format json:results.json",
+    "report": "ts-node src/generateReport.ts && nyc report --reporter=html"
   },
   "keywords": [],
   "author": "",
@@ -12,11 +12,13 @@
   "description": "",
   "devDependencies": {
     "@cucumber/cucumber": "^11.0.1",
-    "@playwright/test": "^1.47.1",
-    "@types/node": "^22.5.5",
-    "cucumber-html-reporter": "^7.1.1",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.5",
+    "cucumber-html-reporter": "^7.2.0",
+    "nyc": "^17.1.0",
     "playwright": "^1.47.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "typescript": "^5.6.3"
   }
 }

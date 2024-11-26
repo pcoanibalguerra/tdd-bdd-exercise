@@ -1,16 +1,21 @@
-import express from 'express';
-import { add } from './math';
+import express, { Request, Response } from 'express';
+import cors from 'cors';
 
 const app = express();
 
-app.get('/add', (req, res) => {
-  const a = Number(req.query.a);
-  const b = Number(req.query.b);
-  const result = add(a, b);
-  if (isNaN(result)) {
-    return res.status(400).send('Invalid input');
+app.use(cors());
+
+app.get('/convert', (req, res) => {
+  const number = Number(req.query.number);
+  console.log(`Received ${number}`);
+  let roman = ""
+  if (number == 1) {
+    
+    roman = "I"
   }
-  res.json({ result });
+  console.log(`Result ${roman}`);
+
+  res.json({ roman });
 });
 
 const PORT = 3000;

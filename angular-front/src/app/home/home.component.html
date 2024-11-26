@@ -1,0 +1,8 @@
+<div class="home-screen">
+    <h1>Bienvenido a la aplicación ToDo</h1>
+    <h2>Please enter your name</h2>
+    <input type="text" placeholder="Enter your name" [(ngModel)]="userName" id="userName" name="userName"/> 
+    <button (click)="navigateToTodoApp()" name="submitButon">Submit</button>
+    <p *ngIf="showError" class="error-message">Name is required. Please enter your name.</p>
+  </div>
+  

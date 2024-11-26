@@ -1,5 +1,12 @@
 A scaffolding created to "play" with cucumber and Playwright
 
+# dependencies
+## project node-vitest
+npm run server 
+
+## project angular-fron
+ng serveo
+
 1. npm install
 2. npm test
 
@@ -12,3 +19,11 @@ Output should be something like
 1 scenario (1 passed)
 3 steps (3 passed)
 0m13.461s (executing steps: 0m06.119s)
+
+## to generate rport
+npm run report
+
+## to run only taged features
+tag the feature (Example in code)
+run 
+npx cucumber-js --tags <tag> 

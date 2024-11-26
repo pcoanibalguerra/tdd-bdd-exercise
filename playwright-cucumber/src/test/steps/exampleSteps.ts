@@ -7,7 +7,7 @@ let page: Page;
 
 Given('the user is on the search engine homepage', async () => {
   browser = await chromium.launch({
-    headless: true,  // Run in non-headless mode to see what's happening
+    headless: false,  // Run in non-headless mode to see what's happening
     timeout: 30000
   });
   console.log("Opening new page...");
@@ -19,11 +19,12 @@ Given('the user is on the search engine homepage', async () => {
 When('the user searches for {string}', async (searchTerm: string) => {
   await page.fill('textarea[name="q"]', searchTerm);
   await page.click('input[name="btnK"]');
-  await page.waitForTimeout(1000); // Waiting for results to load
+  await page.waitForTimeout(10000); // Waiting for results to load
 });
 
 Then('search results for {string} should be displayed', async (searchTerm: string) => {
   const content = await page.textContent('body');
+  await page.waitForTimeout(10000);
   expect(content).toContain(searchTerm);
   await browser.close();
 });
