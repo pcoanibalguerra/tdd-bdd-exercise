@@ -19,6 +19,7 @@ Given('el usuario está en la página de inicio', async function (this: CustomWo
 Then('El usuario debe ver {string}', async (message: string) => {
   const welcomeText = await page.textContent('h1');
   expect(welcomeText).toBe(message);
+  browser.close();
 });
 
 When('El usuario ingresa {string} en el campo de nombre', async (name: string) => {
