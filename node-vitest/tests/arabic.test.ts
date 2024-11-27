@@ -1,4 +1,4 @@
-import { describe, it, expect, test } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import { convertToRoman } from '../src/arabic';
 
 describe('Arabic functions', () => {
@@ -10,14 +10,18 @@ describe('Arabic functions', () => {
     { input: 100, expected: 'C' },
     { input: 500, expected: 'D' },
     { input: 1567, expected: 'MDLXVII' },
-    // { input: 0, expected: '', description: 'El numero 0 no existe en numeros romanos' },
-    // { input: -1, expected: '', description: 'El numero numeros negativos no aplican' },
-    // { input: 0.85, expected: '', description: 'El numeros decimales no aplican' },
+    { input: 0, expected: 'El número debe estar entre 1 y 3999.', description: '' },
+    { input: -1, expected: 'El número debe estar entre 1 y 3999.', description: '' },
+    { input: 0.85, expected: 'El número debe ser entero', description: '' },
   ];
 
   test.each(testCases)('convertir $input a romano espero $expected', ({ input, expected }) => {
-    const result = convertToRoman(input);
-    console.log(result);
-    expect(result).toEqual(expected);
+    try {
+      const result = convertToRoman(input);
+      console.log(result);
+      expect(result).toEqual(expected);
+    } catch (error: any) {
+      expect(error.message).toEqual(expected);
+    }
   });
 });

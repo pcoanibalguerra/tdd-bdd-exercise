@@ -2,6 +2,9 @@ export function convertToRoman(num: number): string {
     if (num <= 0 || num > 3999) {
         throw new Error("El número debe estar entre 1 y 3999.");
     }
+    if (!Number.isInteger(num)) {
+        throw new Error("El número debe ser entero");
+    }
     const romanNumerals: { [key: number]: string } = {
         1000: "M",
         900: "CM",
