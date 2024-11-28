@@ -1,21 +1,18 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import cors from 'cors';
+import { convertToRoman } from './arabic';
 
 const app = express();
 
 app.use(cors());
 
-app.get('/convert', (req, res) => {
-  const number = Number(req.query.number);
-  console.log(`Received ${number}`);
-  let roman = ""
-  if (number == 1) {
-    
-    roman = "I"
+app.get('/convert/:number', (req, res) => {
+  try {
+    const roman = convertToRoman(+req.params.number);
+    res.json({ roman });
+  } catch (error) {
+    res.status(400).send('Invalid input');
   }
-  console.log(`Result ${roman}`);
-
-  res.json({ roman });
 });
 
 const PORT = 3000;
